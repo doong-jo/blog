@@ -2,6 +2,27 @@ body {
   margin: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    /* require for post background */
+    background-color: #0d1117;
+  }
+
+  .not-markdown-body {
+    position: relative;
+  }
+
+  .not-markdown-body-background-layer {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+  }
+}
+
 .github-corner:hover .octo-arm {
   animation:octocat-wave 560ms ease-in-out;
 } 

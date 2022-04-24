@@ -1,16 +1,16 @@
 import * as React from 'react';
 
+import { MDXProvider, MDXRenderer } from "@mdx-js/react"
 import './global.css';
+import './post.css';
 
 // https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 export default function Layout({ children }) {
   return (
-    <>
-      <div className="not-markdown-body-background-layer"></div>
-      <div className="not-markdown-body">
+    <div className="markdown-body">
+      <MDXProvider>
         {children}
-      </div>
-    </>
-
+      </MDXProvider>
+    </div>
   )
 }
