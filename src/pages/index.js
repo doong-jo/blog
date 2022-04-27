@@ -1,55 +1,55 @@
-import * as React from "react"
-import Helmet from 'react-helmet';
-import Layout from '../components/layout';
-import OctoCat from '../components/octo-cat';
+import * as React from "react";
+import Helmet from "react-helmet";
+import Layout from "../components/layout";
+import OctoCat from "../components/octo-cat";
 
 // styles
 const pageStyles = {
   color: "#232129",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+};
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
-}
+};
 const headingAccentStyles = {
   color: "#663399",
-}
+};
 const paragraphStyles = {
   marginBottom: 48,
-}
+};
 const codeStyles = {
   color: "#8A6534",
   padding: 4,
   backgroundColor: "#FFF4DB",
   fontSize: "1.25rem",
   borderRadius: 4,
-}
+};
 const listStyles = {
   marginBottom: 96,
   paddingLeft: 0,
-}
+};
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
   maxWidth: 560,
   marginBottom: 30,
-}
+};
 
 const linkStyle = {
   color: "#0D96F2",
   fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
-}
+};
 
 const docLinkStyle = {
   ...linkStyle,
   listStyleType: "none",
   marginBottom: 24,
-}
+};
 
 const descriptionStyle = {
   color: "#232129",
@@ -57,13 +57,13 @@ const descriptionStyle = {
   marginTop: 10,
   marginBottom: 0,
   lineHeight: 1.25,
-}
+};
 
 const docLink = {
   text: "Documentation",
   url: "https://www.gatsbyjs.com/docs/",
   color: "#8954A8",
-}
+};
 
 const badgeStyle = {
   color: "#fff",
@@ -79,7 +79,7 @@ const badgeStyle = {
   top: -2,
   marginLeft: 10,
   lineHeight: 1,
-}
+};
 
 // data
 const links = [
@@ -91,7 +91,7 @@ const links = [
   //   color: "#999",
   // },
   {
-    text: "Monorepo로 대규모 React 프로젝트 관리하기",
+    text: "[How we build myrealtrip] Monorepo로 대규모 React 프로젝트 관리하기",
     url: "https://medium.com/myrealtrip-product/monorepo%EB%A1%9C-%EB%8C%80%EA%B7%9C%EB%AA%A8-react-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0-d12b65340306",
     description:
       "점차 규모가 커지는 프론트엔드 프로젝트, 어떻게 관리할 것인가?",
@@ -107,19 +107,19 @@ const links = [
   {
     text: "실용적인 리액트 테스트 전략",
     url: "https://velog.io/@sdong001/%EC%8B%A4%EC%9A%A9%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A0%84%EB%9E%B5",
-    description:
-      "실용적인 리액트 테스트는 어떻게 해야할 것인가에 대한 고민",
+    description: "실용적인 리액트 테스트는 어떻게 해야할 것인가에 대한 고민",
     color: "#999",
-  }
-]
+  },
+];
 
 // markup
 const IndexPage = () => {
-  const title = 'doong-jo blog';
-  const description = 'doong-jo blog'
-  const keywords = '조성동,doong-jo,프론트엔드,개발,개발 블로그,기술 블로그,frontend,tech,blog,developer,javascript,css,html,typescript,react';
-  const image = 'https://doong-jo.github.io/og/doong-jo.png';
-  const url = 'https://doong-jo.github.io';
+  const title = "doong-jo blog";
+  const description = "doong-jo blog";
+  const keywords =
+    "조성동,doong-jo,프론트엔드,개발,개발 블로그,기술 블로그,frontend,tech,blog,developer,javascript,css,html,typescript,react";
+  const image = "https://doong-jo.github.io/og/doong-jo.png";
+  const url = "https://doong-jo.github.io";
 
   return (
     <Layout>
@@ -146,11 +146,9 @@ const IndexPage = () => {
       </Helmet>
       <main style={pageStyles}>
         <OctoCat />
-        <h1 style={headingStyles}>
-          doong-jo
-        </h1>
+        <h1 style={headingStyles}>doong-jo</h1>
         <h2>Posts</h2>
-        {links.map(link => (
+        {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
             <span>
               <a
@@ -170,7 +168,7 @@ const IndexPage = () => {
         ))}
       </main>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

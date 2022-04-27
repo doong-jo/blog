@@ -12,12 +12,6 @@ url: "https://doong-jo.github.io/posts/front-end_testing_strategy"
 
 > 원문: https://itnext.io/front-end-testing-strategy-5fddfd463feb
 
-> 트레이드오프: 트레이드오프(trade-off, tradeoff) 또는 상충 관계는 다른 측면에서 이득을 얻으면서 ... 잃어버리는 일이 수반되는 상황적 결정이다. 즉, 하나가 증가하면 다른 하나는 무조건 감소한다는 것을 뜻한다. ([위키백과](https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EC%98%A4%ED%94%84))
->
-> Mock: 모의 객체(Mock Object)란 주로 ... 실제 사용하는 모듈을 사용하지 않고 실제의 모듈을 "흉내"내는 "가짜" 모듈을 작성하여 테스트의 효용성을 높이는데 사용하는 객체이다. ([위키백과](https://ko.wikipedia.org/wiki/%EB%AA%A8%EC%9D%98_%EA%B0%9D%EC%B2%B4))
->
-> human error: 사람의 실수로 만들어지는 오류 ([위키백과](https://en.wikipedia.org/wiki/Human_error))
-
 다양한 테스트 레이어를 정의하고 현재 상황을 짚어보며 효과적인 전략에 대해 제안합니다.
 
 ![image1.png](https://miro.medium.com/max/1400/1*PXPDiNKxOAbIR9MtwqQXZg.png)
@@ -61,12 +55,14 @@ TypeScript(Typing programming language) 및 ESLint(Linters)는 이러한 유형�
 
 #### 단위 테스트
 
-단위 테스트는 소프트웨어의 작고 독립적인 부분들(또는 원자단위)이 예상대로 작동하는지 확인합니다. 일반적으로 종속성(공동 작업자)이 없거나 테스트를 위해 mocked된 것들에 대해 테스트 합니다.
+> Mock: 모의 객체(Mock Object)란 주로 ... 실제 사용하는 모듈을 사용하지 않고 실제의 모듈을 "흉내"내는 "가짜" 모듈을 작성하여 테스트의 효용성을 높이는데 사용하는 객체이다. ([위키백과](https://ko.wikipedia.org/wiki/%EB%AA%A8%EC%9D%98_%EA%B0%9D%EC%B2%B4))
+
+단위 테스트는 소프트웨어의 작고 독립적인 부분들(또는 원자단위)이 예상대로 동작하는지 확인합니다. 일반적으로 종속성(공동 작업자)이 없거나 테스트를 위해 mocked된 것들에 대해 테스트 합니다.
 `Jest`는 해당 유형의 테스트를 수행하는 공통 도구입니다.
 
 #### 통합 테스트
 
-통합 테스트는 여러 단위(기능, 구성 요소, 클래스 등)의 조합으로 함께 의도한대로 작동하는지 확인합니다. 행동을 전체적으로 테스트하고 가능한 한 적게 mock 하려고합니다. 통합 테스트는 다른 것들과 독립적인 하나의 시스템(예: 프론트엔드)을 다루고 있습니다.
+통합 테스트는 여러 단위(기능, 구성 요소, 클래스 등)의 조합으로 함께 의도한대로 동작하는지 확인합니다. 행동을 전체적으로 테스트하고 가능한 한 적게 mock 하려고합니다. 통합 테스트는 다른 것들과 독립적인 하나의 시스템(예: 프론트엔드)을 다루고 있습니다.
 
 `Jest` 는 이 유형을 테스트 하는데 가장 일반적으로 사용되는 도구입니다.
 
@@ -115,6 +111,8 @@ E2E는 여러분의 소프트웨어의 큰 부분을 보장할 수 있도록 도
 ![image2](https://miro.medium.com/max/1194/1*3OXQSU4sjlSO_tCPLYTGkA.png)
 
 > 테스트가 소프트웨어 사용 방식과 유사할수록 더 많은 자신감을 줄 수 있습니다.
+>
+> human error: 사람의 실수로 만들어지는 오류 ([위키백과](https://en.wikipedia.org/wiki/Human_error))
 
 테스트를 통해 여러분은 여러분의 소프트웨어가 릴리즈 하였을 때 의도한대로 동작하고 있는지 확인하려 합니다. 이렇게 하려면 최선의 방법은 소프트웨어에 대한 최종 사용자의 관점을 염두에 두고 테스트를 작성하는 것입니다.
 간단한 원칙에 따라 수동 테스트는 최종 사용자가 어플리케이션과 상호작용 하는 것과 가장 유사하기 때문에 최선의 선택지처럼 보입니다. 그러나 소프트웨어를 테스트할 때 규모에 유연한 해결책이 아닙니다.
@@ -130,31 +128,34 @@ E2E는 여러분의 소프트웨어의 큰 부분을 보장할 수 있도록 도
 
 ---
 
-## II) 트레이드 오프에 대해서 이야기 해봅시다.
+## II) 트레이드오프에 대해서 이야기 해봅시다.
+
+> 트레이드오프: 트레이드오프(trade-off, tradeoff) 또는 상충 관계는 다른 측면에서 이득을 얻으면서 ... 잃어버리는 일이 수반되는 상황적 결정이다. 즉, 하나가 증가하면 다른 하나는 무조건 감소한다는 것을 뜻한다. ([위키백과](https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EC%98%A4%ED%94%84))
 
 ### 1. Code coverage
 
 ![image3](https://miro.medium.com/max/1006/1*-cKATYalSQgYDNrA6rOfGg.png)
 
-어플리케이션에 대한 100% 코드 커버리지를 의무화하는 것은 좋은 생각이 아닙니다. 코드 커버리지가 특정 숫자를 넘어 증가할 때 테스트로부터 받는 이득이 적어지게 됩니다. (70%로 가정해봅시다)
-You get diminishing returns on your tests when the coverage increases beyond a certain number (Let’s say 70% for example).
-먄약 애써 많은 시간을 100%를 위해 쓴다면, 여러분은 테스트가 필요하지 않은 것들을 테스팅하는데 많은 시간을 보내고 있는 여러분 자신을 발견하게 됩니다.
+어플리케이션에 대한 100% 코드 커버리지를 의무화하는 것은 좋은 생각이 아닙니다. 코드 커버리지가 특정 숫자를 넘어 증가할 때 테스트로부터 받는 이득이 적어지게 됩니다 (70%로 가정해봅시다).
+먄약 애써 많은 시간을 100%를 달성하기 위해 쓴다면, 테스트가 필요하지 않은 것들을 테스팅하는데 많은 시간을 보내고 있는 여러분 자신을 발견하게 될 것입니다.
 
 테스트가 필요하지 않은 것들:
 
 - **전혀 로직이 없는 것들**: 어떤 버그도 ESLint나 Typescript에 의해 발견될 수 있습니다.
-- **구현 세부 사항**: 구현 세부사항은 여러분의 소프트웨어가 잘 동작하고 있을 때 매우 큰 자신감은 주지 않습니다. 그리고 이건 여러분을 리팩토링할 때 느리게 만듭니다(여러분은 동작이 동일하게 유지되므로 코드를 리팩토링 할 때 매우 드문 경우에 테스트를 변경해야할 것입니다).
+- **구현 세부사항**: 구현 세부사항은 여러분의 소프트웨어가 잘 동작하고 있을 때 큰 자신감을 주지는 않습니다. 그리고 여러분의 리팩토링을 느리게 만듭니다(동작이 동일하게 유지되므로 코드를 리팩토링 할 때 매우 드문 경우로 테스트를 변경해야할 것입니다).
   이것은 아래 사항으로 도달하게 합니다.
   - 거짓 음성: 어플리케이션 코드를 리팩토링할 때 깨질 수 있습니다.
   - 거짓 양성: 어플리케이션 코드가 깨져도 실패하지 않을 수 있습니다.
 
-> 거짓 음성: 스팸 메일이 아닌데 스팸 메일이라고 하는 것
-> 거짓 양성: 스팸 메일인데 스팸 메일이 아니라고 하는 것
-> [위키백과](https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93_%EC%96%91%EC%84%B1%EA%B3%BC_%EA%B1%B0%EC%A7%93_%EC%9D%8C%EC%84%B1)
-
 > **구현 세부 사항을 어떻게 결정하나요?**
-
+>
 > 여러분의 테스트가 실제 코드가 사용되지 않는 경우에 대해 무엇인가를 한다면 그것은 세부 구현사항을 테스팅 하는 것 입니다(예를 들면 은닉된 함수를 노출시키는 것).
+>
+> 거짓 양성과 거짓 음성이란? [위키백과](https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93_%EC%96%91%EC%84%B1%EA%B3%BC_%EA%B1%B0%EC%A7%93_%EC%9D%8C%EC%84%B1)
+>
+> - 거짓 음성: 스팸 메일이 아닌데 스팸 메일이라고 하는 것
+>
+> - 거짓 양성: 스팸 메일인데 스팸 메일이 아니라고 하는 것
 
 #### Commons coverage에 대한 오해
 
@@ -164,16 +165,18 @@ Code coverage가 여러분에게 말하는 것:
 
 Code coverage가 여러분에게 말하지 않는 것:
 
-- 코드의 이 부분은 비즈니스 요구 사항에 따라 작동합니다.
-- 코드의 이 부분은 어플리케이션의 다른 모든 코드들과 잘 작동합니다.
+- 코드의 이 부분은 비즈니스 요구 사항에 따라 동작합니다.
+- 코드의 이 부분은 어플리케이션의 다른 모든 코드들과 잘 동작합니다.
 - 코드의 이 부분은 다른 부분보다 테스트하는 것이 더 중요합니다.
 
 #### Code Coverage < Use Case Coverage
 
-You should concern less about the code you are testing and more about the use cases that code supports because :
+테스트중인 코드 자체보다는 use case에 대해서는 더 신경써야합니다. 그 이유는 아래와 같습니다.
 
-- Code changes more often than use cases do
-- The code can be “working” when the use case is broken
+> use case: 시스템의 동작을 사용자의 입장에서 표현한 시나리오(= 사용자의 행위 또는 시나리오) ([위키백과](https://en.wikipedia.org/wiki/Use_case))
+
+- 코드의 변경사항이 use case 보다 더 많습니다.
+- use case가 깨졌다고 하더라도 코드는 "동작" 할 수 있습니다.
 
 ---
 
@@ -187,68 +190,75 @@ You should concern less about the code you are testing and more about the use ca
 
 ---
 
-### 2. How to know what to test?
+### 2. 무엇을 테스트 해야하는지 어떻게 알 수 있을까요?
 
-Since you won’t be able to test everything, you will have to decide where you want to focus your effort.
+모든 것을 테스트 할 수 없으므로 여러분의 노력을 집중할 곳을 결정해야합니다.
 
-#### Testing pyramid
+#### 테스팅 피라미드
 
-You may already know the Testing pyramid, which is a popular way to talk about the different layers of testing. The following one is a combination of [Martin Fowler’s blog](https://martinfowler.com/bliki/TestPyramid.html) and one from the [Google Testing blog](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html) :
+여러분은 다양한 테스트 계층에 대해 이야기하는 인기있는 방법인 테스트 피라미드에 대해 이미 알고 있을 수도 있습니다. 다음은 [Martin Fowler의 블로그](https://martinfowler.com/bliki/testpyramid.html)와 [Google Testing blog](<(https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)>)의 내용을 같이 이야기 합니다.
 
 ![image4](https://miro.medium.com/max/1400/1*MwuGw31HDIM_q70NsPkcuQ.png)
 
-The size of these forms of testing on the pyramid is relative to the amount of focus you should give them when testing your applications.
+피라미드의 각각의 형태가 가지는 크기는 여러분이 어플리케이션을 테스팅할 때 얼마만큼 집중해야하는가와 관련이 있습니다.
+두 화살표는 피라미드를 통과 할 때 생겨나는 트레이드오프 관계를 나타냅니다. 피라미드를 올라갈 때 테스트는 쓰기/실행이 느리게 진행되고 (시간과 자원 측면에서) 실행/유지하는 데 더 비쌉니다. 올라갈수록 여러분의 테스트는 더 까다로워고 실패하게 되는 점들이 많아지는 경향이 있습니다.
 
-Both arrows indicate the trade-off you are making when you move through the pyramid. As you move up the pyramid, the tests get slower to write/run and more expensive (in terms of time and resources) to run/maintain. When you go up, your tests tend to become also more finicky and there are more points to failure.
-
+이 두 가지 관점을 따르면, 싸고 빠른 단위 테스트에 더 많은 시간을 보내야한다는 것을 보여줍니다.
 Following only those two aspects, It’s meant to indicate that you should spend more of your time on unit tests because they are at the same time cheap and fast.
 
-But there are a few problems here :
+하지만 몇가지 문제가 있습니다.
 
-1 — This pyramid was created in 2012 and based on this assumption (provides from the bottom notes of Martin Fowler’s blog) :
+1 - 이 피라미드는 2012년에 만들어 졌으며 이 가정을 바탕으로 합니다. (Martin Fowler의 블로그의 하단 메모에서 제공) :
 
 ![image5](https://miro.medium.com/max/1400/1*PcjJ62vDPGPJaMtgVHbv_g.png)
 
-Which is less true now. The testing tools are much better in comparison to what they were before (Better in terms of performance, but also to be able to tell what part of the test has caused the failure as well as describe the problem).
+> 2: 피라미드는 단위 테스트와 같은 집중 테스트에 비해 범위가 넓은 테스트가 비싸고 느리며 부서지기 쉽다는 가정을 기반으로 합니다. 이것은 일반적으로 사실이지만 예외가 있습니다. 높은 수준의 테스트가 빠르고 안정적이며 수정 비용이 저렴하다면 낮은 수준의 테스트가 필요하지 않습니다.
 
-2 — The pyramid was created at a time when the front-end testing ecosystem wasn’t as great as it is now. A decade ago, our tools were not well-equipped for reproducing the front-end end-user.
-Most of the tests, tools, and the pyramid were back-end focused. And the reason is that the back-end is “easier” to test in comparison to testing the front-end. They build software which talks directly to other software (Which can be considered as their users). So it’s natural for them to write tests that would look like the code they want to test.
-For the front-end, the users could be the end-users, who have fingers, hands and will click around, type some stuff on the keyboard, potentially use some screen readers, etc. It’s a lot more complicated to reproduce their behavior. Fortunately, a lot of things have changed in these recent years, and we have now better tools (Ex: Testing Library) to be able to test our software in the same way that the user would do.
+지금은 조금 다릅니다. 테스트 도구는 이전과 비교할 때 훨씬 우수해졌습니다. (성능 측면에서는 더 나은 것뿐만 아니라 테스트의 어떤 부분이 어떤 문제로 실패를 일으켰는지 알 수 있게 되었습니다).
 
-3 — The pyramid does not address Static testing. It’s because it was defined for developers who are using static type languages (Ex: Java, C). But with JavaScript, you have to add external tools (Typescript, Eslint) to get such feedback, so in your reality, it’s one of the layers of testing.
+2 - 피라미드는 프론트엔드 테스트 생태계가 지금만큼 크지 않은시기에 만들어졌습니다. 10년 전, 우리의 도구는 프론트엔드에서 엔드 유저를 재현할 수 없었습니다.
+대부분의 테스트, 도구 및 피라미드는 백엔드에 중점을 두었습니다. 이유는 백엔드가 프론트엔드 테스트와 비교하여 테스트하기가 더 쉽기 때문입니다. 백엔드는 다른 소프트웨어(사용자로 간주 될 수 있음)와 직접 대화하는 소프트웨어를 구축합니다. 그래서 마치 그들이 테스트를 하기 위하여 원하는 대로 코드를 작성하여 테스트를 작성하는 것처럼 보이는 것은 자연스러운 일입니다.
+프론트엔드의 경우, 사용자는 손가락, 손 및 클릭을 보유하고 키보드에 물건을 입력하고 잠재적으로 일부 스크린 리더를 사용하는 최종 사용자가 될 수 있습니다. 동작을 재현하는 것이 훨씬 더 복잡합니다. 다행히도 최근 몇 년 동안 많은 것들이 바뀌 었으며 이제는 사용자와 같은 방식으로 소프트웨어를 테스트 할 수있는 더 나은 도구 (예: `Testing Library`)를 보유하고 있습니다.
 
-4 — There is one aspect that is left out in this pyramid: As you move up the pyramid, the confidence coefficient of each form of testing increases.
+3 - 피라미드는 정적 테스트를 다루지 않습니다. 정적 유형 언어를 사용하는 개발자를 위해 정의 되었기 때문입니다 (예: `Java`, `C`). 그러나 JavaScript를 사용하고 그러한 피드백을 얻으려면 외부 도구 (`TypeScript`, `Eslint`)를 추가해야하므로 실제로는 테스트 계층 중 하나로 볼 수 있습니다.
+
+4 - 이 피라미드에는 남은 한 가지 측면이 있습니다. 피라미드를 올라갈 때 각 형태의 테스트의 신뢰 계수가 증가합니다.
 
 ![image6](https://miro.medium.com/max/1400/1*2WNZBbX_68J-EkIy4nx8ZQ.png)
 
-The confidence coefficient means, the higher you go up the testing pyramid, the closer you are getting to your tests resembling the way that your software is used. And so the confidence that you get from those also goes up.
+신뢰 계수는 테스트 피라미드가 높을수록 소프트웨어를 사용하는 방식과 비슷한 테스트에 가까워지고 있습니다. 그리고 여러분이 그로부터 얻는 자신감도 올라갑니다.
 
 > For example, if you have a checkout feature, testing the entire process in the same way that a real user would interact with, allows you to cover and ensure that all the sub-elements used work together.
+> 예를 들어, 결제 기능이있는 경우 실제 사용자와 상호 작용하는 것과 동일한 방식으로 전체 프로세스를 테스트하면 그 과정에 사용된 모든 하위 요소를 함께 보장할 수 있습니다.
 
-So while E2E tests may be slower and more expensive than unit tests, they bring you much more confidence that your application is working as intended.
+따라서 E2E 테스트는 단위 테스트보다 느리고 비싸지만 애플리케이션이 의도한대로 동작한다는 확신을 가져옵니다.
+반대로, 단위 테스트는 더 빠르고 저렴하지만, 아래 내용들을 여러분 자신에게서 발견할 수 있습니다.
 On the opposite, Units tests are faster and cheaper, but by testing them you might find yourselves:
 
 - Testing pieces in isolation (which doesn’t give you confidence that they work properly together)
-- Testing implementations details
-- Mocking a lot
+- 여러 부분으로 나누어 테스트합니다 (이들이 함께일 때도 제대로 동작한다는 확신을 갖지 못함)
+- 구현 세부사항을 테스트
+- 매우 많은 mock을 만들어 냄
 
-which are many factors that take you away from the principle of “Tests your application in the exact same way that your user would interact with” and so trade away confidence.
+이것들은 “사용자와 상호 작용하는 것과 동일한 방식으로 응용 프로그램을 테스트하는 것”의 원칙에서 벗어나는 많은 요인들입니다.
 
-#### Testing trophy
+#### 테스팅 트로피
 
 ![image7](https://miro.medium.com/max/1400/1*NkeRL80U-fE3N5YeuIeSHA.png)
 
-With the testing trophy, we keep the same testing stack: **E2E**, **Integrations**, and **Unit**; but you changed the ratio between the different shapes. we also add the **Static** layer to represent the reality of JavaScript.
+테스트 트로피를 사용하면 **e2e**, **통합** 및 **단위**의 동일한 테스트 스택을 유지합니다. 하지만 각각의 비율을 변경했습니다. 또한 JavaScript의 현실을 나타내기 위해 **정적** 레이어를 추가합니다.
 
-**E2E tests** are the type of automated testing that gives the most confidence that your software works well as intended. Maybe in the future our E2E tools will just get so much better that you will just focus 100% on it, but today they can still be expensive to write and run. So you are going to focus only on some high-level critical tests which can require the interactions of multiple systems (Front-end, back-ends, …) and represent production data. In E2E you are generally going to assume the happy path and especially avoid over-testing.
+**E2E tests** 소프트웨어가 의도한대로 잘 동작한다는 확신을 갖는 자동 테스트 유형입니다. 아마도 미래에 우리의 E2E 도구들은 우리가 100% 집중할 수 있도록 훨씬 나아질 것이지만, 현재도 여전히 작성하고 실행하는 것이 비쌉니다.
+따라서 여러 시스템 (프론트엔드, 백엔드 등)의 상호 작용이 필요하고 프로덕션 데이터를 나타내는 일부 높은 레벨의 중요한 테스트에만 집중할 것입니다. 따라서 E2E에서는 일반적으로 성공하는 시나리오만 가정하고 그 이상을 넘어가는 테스트는 피할 것입니다.
 
-**Integration tests** are the widest layer of the trophy because it’s where you should focus most of your effort. They strike a great balance on the trade-offs between confidence and speed/expense to write and run your tests. They test some happy paths and unhappy paths. By testing that several parts of your software work well together as intended, you will be able to cover a lot of use cases in the same way that the end-user would interact with it; And you’ll find that you often don’t need to bother testing each smaller piece in isolation.
+**통합 테스트**는 대부분의 노력을 쏟아야하기 때문에 트로피의 가장 넓은 계층입니다. 통합 테스트는 자신감과 속도/비용 사이의 트레이드 오프에 좋은 균형을 이루어 테스트를 작성하고 실행합니다. 또한 통합테스트는 몇가지 성공 시나리오와 불행한 시나리오를 테스트합니다.
+통합테스트에서는 소프트웨어의 여러 부분이 의도한대로 잘 동작한다는 것을 보장하는 테스팅을 함으로써 최종 사용자와 상호 작용하는 것과 같은 방식으로 많은 사용 사례를 다룰 수 있습니다. 그럼으로써 대체로 작은 독립적인 내용들을 테스트하는 것을 신경쓰지 않아도 된다는 것을 알게됩니다.
 
-**Unit tests** are the smallest section of the trophy. It’s all about focusing your effort on testing little edge cases, or typically pure functions which have a lot of complex logic. Here you are not testing the business cases (the cases that the end-user will have). The users of your units are typically the other developers which would call your function from a developer’s perspective.
+**단위 테스트**는 트로피의 가장 작은 부분입니다. 그것은 작은 엣지 케이스를 테스트하는 데 집중하는 것 또는 일반적으로 복잡한 논리가 많은 순수한 기능에 초점을 맞추는 것입니다. 여기서는 비즈니스 사례를 테스트하지 않습니다 (그 사례들을 최종 사용자가 가질 경우). 단위 테스트의 사용자는 일반적으로 개발자의 관점에서 그 기능을 호출하는 다른 개발자입니다.
 
-**Static tests** should be applied everywhere in the application because they give you a lot of information without even needing to run your application.
+**정적 테스트**는 애플리케이션을 실행하지 않고도 많은 정보를 제공하기 때문에 모든 곳에 적용해야합니다.
 
-> The ratio between each shapes is not 100% accurate, most of the time you would like to have more E2E than Unit tests.
+> 각각의 비율은 100% 정확하지 않으며 대부분 시간을 단위 테스트보다는 E2E를 더 많이 가져가는 것을 권합니다.
 
 ---
 
@@ -263,15 +273,18 @@ With the testing trophy, we keep the same testing stack: **E2E**, **Integrations
 
 ![image7](https://miro.medium.com/max/1194/1*vqODTN3LTNPhhgcAX9kJcA.png)
 
-This tweet from Guillermo Rauch (CEO and founder of Vercel) is a perfect summary of that testing philosophy :
+> 테스트를 작성하라. 너무 많지 않게. 통합을 중점적으로.
 
-- Write tests: They give you CONFIDENCE that your software work as intended
-- Not too many: Do not mandate 100% code coverage. You should think less about the code you are testing and more about the use cases that the code supports.
-- Mostly integration: They are the best balance on the trade-offs between confidence and speed/expense to write and run your tests.
+Guillermo Rauch (Vercel의 CEO 및 창립자)의 이 트윗은 테스트 철학의 완벽한 요약입니다.
 
-It is also important to mention that Manual testing will surely still have a place for decades among the testing strategy. There will always be some use cases that weren’t anticipated and tested by the developers, and a real human eye can help on that part. But as you write automated tests, confidence increases and your need for manual testing will decrease. There are lots of benefits with manual testing but many problems such as the amount of time and resources needed.
+- 테스트를 작성하라: 소프트웨어가 의도한대로 작동한다는 확신을 갖습니다.
+- 너무 많지 않게: 100% 코드 범위를 의무화하지 마십시오. 테스트중인 코드 자체보다는 그 코드가 기반이 되는 use case에 대해서는 더 신경써야합니다.
+- 통합을 중점적으로: 테스트를 작성하고 실행하기 위한 신뢰와 속도/비용 사이의 트레이드 오프에서 가장 적합한 균형을 가지고 있습니다.
 
-It’s again all about trade-offs, what is critical for the end-user and so where you want to put your effort. You want to be confident that when you deploy your changes, your code satisfies the business requirements, and you provide an awesome experience to your Users. And you should use a mix of the different testing strategies to accomplish that goal.
+수동 테스트는 테스트 전략 중에서 수십 년 동안 여전히 자리를 차지할 것이라는 점도 언급하는 것이 중요합니다. 개발자가 예상하고 테스트하지 않은 일부 사용 사례가 항상 있을 것이며, 실제 인간의 눈은 그 부분에 도움이 될 수 있습니다. 그러나 자동화된 테스트를 작성하면 신뢰도가 높아지고 수동 테스트의 필요성이 줄어 듭니다. 수동 테스트에는 많은 이점이 있지만 필요한 시간 및 비용과 같은 많은 문제가 있습니다.
+
+다시 한번 트레이드 오프가 무엇인지 짚어본다면, 실제 사용자에게 중요한 것이 무엇인지 그래서 여러분이 어디에 노력을 쏟아야 할지에 관한 것이라고 할 수 있습니다.
+여러분은 변경 사항을 배포 할 때 확신을 가지고 코드가 비즈니스 요구 사항을 충족시키고 사용자에게 멋진 경험을 제공하고 싶을 것입니다. 그러기 위해서는 다양한 테스트 전략을 함께 사용해야 합니다.
 
 읽어주셔서 감사합니다.
 
