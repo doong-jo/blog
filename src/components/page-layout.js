@@ -1,14 +1,16 @@
-import * as React from 'react';
-import Helmet from 'react-helmet';
+import * as React from "react";
+import Helmet from "react-helmet";
+import Utterances from "./utterances";
 
-import './global.css';
-import OctoCat from './octo-cat';
-import './post.css';
+import "./global.css";
+import OctoCat from "./octo-cat";
+import "./post.css";
 
 // https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 // https://reacttraining.com/blog/gatsby-mdx-blog/
 export default function Layout({ children, pageContext }) {
-  const { title, description, keywords, url, image, date } = pageContext.frontmatter;
+  const { title, description, keywords, url, image, date } =
+    pageContext.frontmatter;
 
   return (
     <div id="post-body" className="markdown-body dark">
@@ -32,16 +34,10 @@ export default function Layout({ children, pageContext }) {
         <meta name="twitter:image" content={image} />
 
         <link rel="canonical" href={url} />
-        <script src="https://utteranc.es/client.js"
-          repo="doong-jo/blog"
-          issue-term="pathname"
-          theme="preferred-color-scheme"
-          crossorigin="anonymous"
-          async>
-        </script>
       </Helmet>
       <time>{date}</time>
       {children}
+      <Utterances />
     </div>
-  )
+  );
 }
