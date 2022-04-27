@@ -83,13 +83,13 @@ const badgeStyle = {
 
 // data
 const links = [
-  // {
-  //   text: "[KOR] Front-end testing strategy",
-  //   url: `http://doong-jo.github.io/posts/front-end_testing_strategy`,
-  //   description:
-  //     "Kent C. Dodds의 테스팅 원칙을 기반으로 하는 프론트엔드 전략을 소개합니다.",
-  //   color: "#999",
-  // },
+  {
+    text: "[KOR] Front-end testing strategy",
+    url: `http://doong-jo.github.io/posts/front-end_testing_strategy`,
+    description:
+      "Kent C. Dodds의 테스팅 원칙을 기반으로 하는 프론트엔드 테스팅 전략을 소개합니다.",
+    color: "#999",
+  },
   {
     text: "[How we build myrealtrip] Monorepo로 대규모 React 프로젝트 관리하기",
     url: "https://medium.com/myrealtrip-product/monorepo%EB%A1%9C-%EB%8C%80%EA%B7%9C%EB%AA%A8-react-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0-d12b65340306",
