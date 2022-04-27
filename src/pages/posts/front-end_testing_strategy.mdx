@@ -3,7 +3,7 @@ title: "[번역] 프론트엔드 테스팅 전략"
 description: "Kent C. Dodds의 원칙을 기반으로 하는 프론트엔드 테스트 전략을 소개합니다."
 keywords: "조성동,doong-jo,프론트엔드,개발,개발 블로그,기술 블로그,frontend,tech,blog,developer,javascript,css,html,typescript,react,테스팅,테스트,테스트 방법,테스트 전략,testing,testing strategy"
 author: "doong-jo"
-date: "2022-04-27"
+date: "2022-04-29"
 image: "https://doong-jo.github.io/og/front-end_testing.png"
 url: "https://doong-jo.github.io/posts/front-end_testing_strategy"
 ---
@@ -203,8 +203,7 @@ Code coverage가 여러분에게 말하지 않는 것:
 피라미드의 각각의 형태가 가지는 크기는 여러분이 애플리케이션을 테스팅할 때 얼마만큼 집중해야 하는가와 관련이 있습니다.
 두 화살표는 피라미드를 통과할 때 생겨나는 트레이드오프 관계를 나타냅니다. 피라미드를 올라갈 때 테스트는 쓰기/실행이 느리게 진행되고 (시간과 자원 측면에서) 실행/유지하는 데 더 비쌉니다. 올라갈수록 여러분의 테스트는 더 까다로워고 실패하게 되는 점들이 많아지는 경향이 있습니다.
 
-이 두 가지 관점을 따르면, 싸고 빠른 단위 테스트에 더 많은 시간을 보내야 한다는 것을 보여줍니다.
-Following only those two aspects, It’s meant to indicate that you should spend more of your time on unit tests because they are at the same time cheap and fast.
+이 두 가지 관점을 따르면, 저렴하고 빠른 단위 테스트에 더 많은 시간을 보내야 한다는 것을 보여줍니다.
 
 하지만 몇 가지 문제가 있습니다.
 
@@ -232,7 +231,6 @@ Following only those two aspects, It’s meant to indicate that you should spend
 
 따라서 E2E 테스트는 단위 테스트보다 느리고 비싸지만 애플리케이션이 의도한 대로 동작한다는 확신을 가져옵니다.
 반대로, 단위 테스트는 더 빠르고 저렴하지만, 아래 내용들을 여러분 자신에게서 발견할 수 있습니다.
-On the opposite, Units tests are faster and cheaper, but by testing them you might find yourselves:
 
 - 여러 부분으로 나누어 테스트합니다 (이들이 함께일 때도 제대로 동작한다는 확신을 갖지 못함)
 - 구현 세부사항을 테스트
@@ -271,11 +269,11 @@ On the opposite, Units tests are faster and cheaper, but by testing them you mig
 
 ![image7](https://miro.medium.com/max/1194/1*vqODTN3LTNPhhgcAX9kJcA.png)
 
-> 테스트를 작성하라. 너무 많지 않게. 통합을 중점적으로.
+> 테스트를 작성하세요. 너무 많지 않게. 통합을 중점적으로.
 
 Guillermo Rauch (Vercel의 CEO 및 창립자)의 이 트윗은 테스트 철학의 완벽한 요약입니다.
 
-- 테스트를 작성하라: 소프트웨어가 의도한 대로 작동한다는 확신을 갖습니다.
+- 테스트를 작성하세요: 소프트웨어가 의도한 대로 작동한다는 확신을 갖습니다.
 - 너무 많지 않게: 100% 코드 범위를 의무화하지 마십시오. 테스트 중인 코드 자체보다는 그 코드가 기반이 되는 use case에 대해서는 더 신경 써야 합니다.
 - 통합을 중점적으로: 테스트를 작성하고 실행하기 위한 신뢰와 속도/비용 사이의 트레이드오프에서 가장 적합한 균형을 가지고 있습니다.
 
