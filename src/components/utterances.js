@@ -5,6 +5,10 @@ const Utterances = () => {
   const [status, setStatus] = useState("pending");
 
   useEffect(() => {
+    if (!!commentsEl) {
+      return;
+    }
+
     const scriptEl = document.createElement("script");
     scriptEl.onload = () => setStatus({ status: "success" });
     scriptEl.onerror = () => setStatus({ status: "failed" });
@@ -15,7 +19,7 @@ const Utterances = () => {
     scriptEl.setAttribute("theme", "preferred-color-scheme");
     scriptEl.setAttribute("crossorigin", "anonymous");
     commentsEl.current.appendChild(scriptEl);
-  }, []);
+  }, [commentsEl]);
 
   return (
     <div className="comments-wrapper">
