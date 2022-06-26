@@ -15,7 +15,7 @@ const Utterances = () => {
     scriptEl.setAttribute("theme", "preferred-color-scheme");
     scriptEl.setAttribute("crossorigin", "anonymous");
     commentsEl.current.appendChild(scriptEl);
-  }, [commentsEl]);
+  }, []);
 
   return (
     <div className="comments-wrapper">
