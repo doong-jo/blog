@@ -3,9 +3,10 @@ import React, { useEffect, useState, createRef } from "react";
 const Utterances = () => {
   const commentsEl = createRef();
   const [status, setStatus] = useState("pending");
+  const [isMounted, setMount] = useState(false);
 
   useEffect(() => {
-    if (!Boolean(commentsEl)) {
+    if (isMounted) {
       return;
     }
 
@@ -19,6 +20,8 @@ const Utterances = () => {
     scriptEl.setAttribute("theme", "preferred-color-scheme");
     scriptEl.setAttribute("crossorigin", "anonymous");
     commentsEl.current.appendChild(scriptEl);
+
+    setMount(true);
   }, [commentsEl]);
 
   return (
