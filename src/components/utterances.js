@@ -5,7 +5,7 @@ const Utterances = () => {
   const [status, setStatus] = useState("pending");
 
   useEffect(() => {
-    if (!!commentsEl) {
+    if (!Boolean(commentsEl)) {
       return;
     }
 
