@@ -1,0 +1,78 @@
+---
+title: '[번역] Lerna는 공식적으로 죽었다. 모노레포가 영원하길'
+description: 'Kent C. Dodds의 원칙을 기반으로 하는 프론트엔드 테스트 전략을 소개합니다.'
+keywords: '조성동,doong-jo,프론트엔드,개발,개발 블로그,기술 블로그,frontend,tech,blog,developer,javascript,css,html,typescript,react,테스팅,테스트,테스트 방법,테스트 전략,testing,testing strategy'
+author: 'doong-jo'
+date: '2022-05-01'
+image: 'https://doong-jo.github.io/og/front-end_testing.png'
+url: 'https://doong-jo.github.io/posts/front-end_testing_strategy'
+---
+
+# Lerna는 공식적으로 죽었다. 모노레포가 영원하길
+
+> 원문: https://betterprogramming.pub/lerna-is-officially-dead-long-live-monorepos-9853c80a7b0e
+
+> 4가지 도구를 사용하여 JavaScript 모노레포를 효율적으로 관리할 수 있습니다.
+
+![image1.png](https://miro.medium.com/max/1400/1*HOIXYzC17oKEWc5p4gMIwg.png)
+
+모노레포 접근 방식은 모든 종속성을 관리하는 좋은 방법입니다. 그리고 이는 몇 년 동안 뜨거운 주제였습니다. 모노레포는 잘 정의된 관계를 통해 개별 프로젝트를 유지할 수 있는 좋은 방법입니다. 즉각적인 이점 중 하나는 `ESLint`, `Prettier`, `TypeScript` 등과 같은 구성을 서로 다른 프로젝트를 통해 공유하여 일관성을 보장할 수 있다는 점입니다.
+
+`npm`, `yarn` 및 `pnpm`과 같은 도구는 모노레포를 기본적으로 지원합니다. 그러나 몇몇 기능을 지원하려는 의도가 전혀 없기에 이에 따른 결핍이 있습니다. 이것이 `Lerna`가 활동한 영역이었습니다. 이것의 목표는 패키지를 빌드, 조정 및 게시할 수 있도록 확장성을 향상시키고 만드는 것이었습니다.
+
+Lerna는 최근에 공식적으로 수명이 다했습니다. 비록 메인테이너였던 `@evocateur`가 그의 불타는 목소리와 프로젝트를 포기하려는 의도를 밝혔지만, 그것은 2020년 4월까지 공식화되지 않았었습니다.
+
+> 중요한 참고: 이 프로젝트는 현재 [유지 관리되지 않습니다](https://github.com/lerna/lerna/issues/2703). 모노레포 관리를 위한 대체 도구 채택을 고려하십시오. — Lerna의 Readme.md입니다.
+
+이 프로젝트는 매일 `130만` 건 이상의 다운로드가 지속적으로 발생하고 있지만 그 이상으로 넘어가지는 않을 것입니다. 왜 그럴까요? 제작자는 그것을 수정하기보다는 다시 만들기를 열망할 것입니다. 최신 툴링의 성능과 경쟁할 수 없었습니다. 비록 많은 사람들이 여전히 `Lerna`를 사랑하고 즐긴다고 해도, 이제는 나아가야 할 때입니다.
+
+그렇다면 JavaScript/TypeScript 모노레포 에코시스템을 구축할 때 우리가 선택할 수 있는 것은 무엇일까요? 이 글에서는 가장 인기 있는 도구를 알아보려고 합니다.
+
+> **업데이트**: 이 글이 게시된 후 내용이 뒤바뀌었습니다. Lerna의 제작자가 프로젝트를 **Nrwl** 🚀🚀에게 넘기기로 결정했습니다. 그들의 로드맵은 여전히 공개되어야 합니다. 지난 한 해 동안 Lerna가 비활성화된 동안 뒤쳐졌습니다.
+
+## Yarn, Npm, and Pnpm
+
+![image2.png](https://miro.medium.com/max/1400/1*KgmML7r4OsnNdDikiVfiBg.png)
+
+앞서 언급했듯이 "npm", "yarn", "pnpm"은 이미 네이티브 모노레포 지원으로 출하되고 있습니다. 그렇다면 "Lerna"나 다른 툴이 정말 필요한지 자문해 볼 필요가 있습니다. 당신의 모노레포는 그렇게 복잡합니까?
+
+얀이 선구자였습니다. 2020년 10월 출시 버전 7에서 npm에 도착했습니다. 이 세 가지 사이에는 많은 유사점이 있습니다.
+
+"pnpm"에서 작업 공간 구성은 "pnpm-workspace.yaml"에 있고 "yarn" 및 "npm"에서는 루트 패키지에 있습니다.제이슨입니다
+
+'npm' 작업영역 사용 예제입니다.
+
+```js
+// /.package.json
+{
+  // ...
+  "workspaces": ["./packages/*"]
+}
+```
+
+테스트와 같은 명령을 실행하려면 npm의 `--workspaces`와 `pnpm`의 `-r` 또는 `recursive`를 사용할 수 있습니다.
+
+```sh
+# prune all workspaces
+pnpm -r exec -- rm -rf node_modules && rm pnpm-lock.yaml
+# run all tests for all workspaces with scope @doppelmutzi
+pnpm recursive run test --filter @doppelmutzi/
+```
+
+`yarn`의 한 가지 특징은 `workspace:` 참조를 동적으로 대체하여 종속성 프로세스를 단순화할 수 있다는 것입니다. 이는 매우 편리합니다.
+
+```json
+{
+  "dependencies": {
+    "star": "workspace:*",
+    "caret": "workspace:^",
+    "tilde": "workspace:~",
+    "range": "workspace:^1.2.3",
+    "path": "workspace:path/to/baz"
+  }
+}
+```
+
+그 세 가지 중에서 어떤 것이 가장 좋습니까? 아마 npm이 빠르게 따라잡고 있지만 좀 더 성숙한 특징을 가지고 있기 때문에 실을 뽑을 것 같습니다. pnpm은 디스크 사용과 같은 다른 이점도 있지만, 이는 실베리를 통해 달성할 수 있습니다.
+
+그 세 가지 중 어떤 것을 언제 사용할까요? 상대적으로 규모가 작은 프로젝트에만 해당됩니다. 왜냐하면 이 프로젝트의 조정 측면이 없기 때문입니다. 복잡한 종속성 그래프 또는 릴리스가 필요한 경우 다른 도구를 선택하는 것이 좋습니다.
