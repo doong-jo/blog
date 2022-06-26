@@ -22,7 +22,7 @@ const Utterances = () => {
     commentsEl.current.appendChild(scriptEl);
 
     setMount(true);
-  }, [commentsEl]);
+  }, [isMounted, commentsEl]);
 
   return (
     <div className="comments-wrapper">
