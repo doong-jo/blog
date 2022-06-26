@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef } from "react";
+import React, { useEffect, useState, createRef, memo } from "react";
 
 const Utterances = () => {
   const commentsEl = createRef();
@@ -25,4 +25,4 @@ const Utterances = () => {
     </div>
   );
 };
-export default Utterances;
+export default memo(Utterances);
