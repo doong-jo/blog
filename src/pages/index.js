@@ -85,20 +85,20 @@ const badgeStyle = {
 const links = [
   {
     text: "[번역] Lerna is Officially Dead. Long Live Monorepos",
-    url: `http://doong-jo.github.io/posts/long-live-monorepos`,
+    url: `${window.location.origin}/posts/long-live-monorepos`,
     description:
       "2022년 JavaScript 모노레포를 효율적으로 관리할 수 있는 도구를 알아봅니다.",
     color: "#999",
   },
   {
     text: "[번역] You Don’t Need A UI Framework",
-    url: `http://doong-jo.github.io/posts/you_dont_need_a_ui_framework`,
+    url: `${window.location.origin}/posts/you_dont_need_a_ui_framework`,
     description: "대부분의 제품에 UI Framework는 필요하지 않을 수 있습니다.",
     color: "#999",
   },
   {
     text: "[번역] Front-end testing strategy",
-    url: `http://doong-jo.github.io/posts/front-end_testing_strategy`,
+    url: `${window.location.origin}/posts/front-end_testing_strategy`,
     description:
       "Kent C. Dodds의 테스팅 원칙을 기반으로 하는 프론트엔드 테스팅 전략을 소개합니다.",
     color: "#999",
