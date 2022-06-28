@@ -81,7 +81,10 @@ const badgeStyle = {
   lineHeight: 1,
 };
 
-const origin = window ? window.location.origin : "https://doong-jo.github.io";
+const origin =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : "https://doong-jo.github.io";
 
 // data
 const links = [
