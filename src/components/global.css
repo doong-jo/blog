@@ -28,6 +28,11 @@ header > a {
   text-decoration: none;
 }
 
+.not-markdown-body {
+  position: relative;
+  height: 100vh;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     /* require for post background */
@@ -35,6 +40,7 @@ header > a {
   }
 
   .not-markdown-body {
+    background: #272b33;
     position: relative;
   }
 

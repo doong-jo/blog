@@ -3,23 +3,6 @@ import Helmet from "react-helmet";
 import Layout from "../components/layout";
 import OctoCat from "../components/octo-cat";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-const headingAccentStyles = {
-  color: "#663399",
-};
-const paragraphStyles = {
-  marginBottom: 48,
-};
 const codeStyles = {
   color: "#8A6534",
   padding: 4,
@@ -34,40 +17,14 @@ const listStyles = {
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
-  maxWidth: 560,
   marginBottom: 30,
 };
 
 const linkStyle = {
-  color: "#0D96F2",
+  color: "#71B7FF",
   fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
-};
-
-const footerLnkStyle = {
-  color: "#0D96F2",
-  fontSize: 14,
-};
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-};
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-};
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
 };
 
 const badgeStyle = {
@@ -99,6 +56,7 @@ const links = [
     description:
       "HTML을 XHTML 방식으로 작성하고 있진 않으신가요? HTML을 HTML 답게 작성하는 관점을 알아봅니다.",
     color: "#999",
+    badge: true,
   },
   {
     text: "[번역] Lerna는 공식적으로 죽었습니다. 모노레포여 영원하길",
@@ -174,9 +132,9 @@ const IndexPage = () => {
 
         <link rel="canonical" href={url} />
       </Helmet>
-      <main style={pageStyles}>
+      <main>
         <OctoCat />
-        <h1 style={headingStyles}>doong-jo</h1>
+        <h1>doong-jo</h1>
         <h2>Posts</h2>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
@@ -192,12 +150,10 @@ const IndexPage = () => {
                   NEW!
                 </span>
               )}
-              <p style={descriptionStyle}>{link.description}</p>
+              <p className="link-description">{link.description}</p>
             </span>
           </li>
         ))}
-        <h2>Products</h2>
-        WIP
       </main>
       <footer>{new Date().getFullYear()} doong-jo All rights reserved.</footer>
     </Layout>

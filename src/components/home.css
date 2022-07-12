@@ -1,0 +1,30 @@
+main {
+  color: #232129;
+  padding: 96px;
+  padding-left: 20%;
+  font-family: "-apple-system, Roboto, sans-serif, serif";
+}
+
+.link-description {
+  color: #232129;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 1.25;
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    color: #fff4db;
+  }
+
+  .link-description {
+    color: #fff4db;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 96px;
+  }
+}
