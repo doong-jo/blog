@@ -45,6 +45,11 @@ const linkStyle = {
   verticalAlign: "5%",
 };
 
+const footerLnkStyle = {
+  color: "#0D96F2",
+  fontSize: 14,
+};
+
 const docLinkStyle = {
   ...linkStyle,
   listStyleType: "none",
@@ -89,20 +94,27 @@ const origin =
 // data
 const links = [
   {
-    text: "[번역] Lerna is Officially Dead. Long Live Monorepos",
+    text: "[번역] XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.s",
+    url: `${origin}/posts/write-html-the-html-way-not-the-xhtml-way`,
+    description:
+      "HTML을 XHTML 방식으로 작성하고 있진 않으신가요? HTML을 HTML 답게 작성하는 관점을 알아봅니다.",
+    color: "#999",
+  },
+  {
+    text: "[번역] Lerna는 공식적으로 죽었습니다. 모노레포여 영원하길",
     url: `${origin}/posts/long-live-monorepos`,
     description:
       "2022년 JavaScript 모노레포를 효율적으로 관리할 수 있는 도구를 알아봅니다.",
     color: "#999",
   },
   {
-    text: "[번역] You Don’t Need A UI Framework",
+    text: "[번역] 여러분은 UI Framework가 필요없습니다.",
     url: `${origin}/posts/you_dont_need_a_ui_framework`,
     description: "대부분의 제품에 UI Framework는 필요하지 않을 수 있습니다.",
     color: "#999",
   },
   {
-    text: "[번역] Front-end testing strategy",
+    text: "[번역] 프론트엔드 테스팅 전략",
     url: `${origin}/posts/front-end_testing_strategy`,
     description:
       "Kent C. Dodds의 테스팅 원칙을 기반으로 하는 프론트엔드 테스팅 전략을 소개합니다.",
@@ -184,7 +196,10 @@ const IndexPage = () => {
             </span>
           </li>
         ))}
+        <h2>Products</h2>
+        WIP
       </main>
+      <footer>{new Date().getFullYear()} doong-jo All rights reserved.</footer>
     </Layout>
   );
 };
