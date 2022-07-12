@@ -94,7 +94,7 @@ const origin =
 // data
 const links = [
   {
-    text: "[번역] XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.s",
+    text: "[번역] XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.",
     url: `${origin}/posts/write-html-the-html-way-not-the-xhtml-way`,
     description:
       "HTML을 XHTML 방식으로 작성하고 있진 않으신가요? HTML을 HTML 답게 작성하는 관점을 알아봅니다.",
