@@ -4,8 +4,8 @@ description: "HTML을 XHTML 방식으로 작성하고 있진 않으신가요? HT
 keywords: "조성동,doong-jo,프론트엔드,개발,개발 블로그,기술 블로그,frontend,tech,blog,developer,javascript,css,html"
 author: "doong-jo"
 date: "2022-07-09"
-image: "https://doong-jo.github.io/og/monorepo.png"
-url: "https://doong-jo.github.io/posts/long-live-monorepos"
+image: "https://doong-jo.github.io/og/xhtml.png"
+url: "https://doong-jo.github.io/posts/write-html-the-html-way-not-the-xhtml-way/"
 ---
 
 # XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.
@@ -100,11 +100,11 @@ XHTML 방식은 문서화가 매우 잘되어있습니다. [“HTML4와의 차�
 하지만 HTML에서는 이 코드로도 작성할 수 있습니다. (유효한 코드입니다)
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 <ul>
-  <li>Praesent augue nisl
-  <li>Lobortis nec bibendum ut
-  <li>Dictum ac quam
+  <li>Praesent augue nisl</li>
+  <li>Lobortis nec bibendum ut</li>
+  <li>Dictum ac quam</li>
 </ul>
 ```
 
@@ -117,7 +117,7 @@ XHTML 방식은 문서화가 매우 잘되어있습니다. [“HTML4와의 차�
 이것은 XHTML이 HTML로 가져온 것이지만, [슬래시가 void 요소에 영향을 미치지 않기](https://html.spec.whatwg.org/multipage/syntax.html#start-tags) 때문에, 여러분은 아래처럼 해도 됩니다.
 
 ```html
-<br>
+<br />
 ```
 
 HTML에서는 모든 내용을 대문자로 쓸 수도 있습니다.
@@ -139,19 +139,19 @@ HTML에서는 모든 내용을 대문자로 쓸 수도 있습니다.
 마지막으로, XHTML-HTML이 아닌 HTML-HTML은 속성을 최소화할 수 있습니다. 즉, 입력 요소를 필수 및 읽기 전용으로 표시하는 대신 다음과 같이 합니다.
 
 ```html
-<input type="text" required="required" readonly="readonly">
+<input type="text" required="required" readonly="readonly" />
 ```
 
 속성을 최소화할 수 있습니다.
 
 ```html
-<input type="text" required readonly>
+<input type="text" required readonly />
 ```
 
 따옴표가 필요하지 않다는 사실뿐만 아니라 `text`가 여기서 `type` 속성에 대한 기본값(더 많은 [불필요한 속성-값 조합](https://meiert.com/en/blog/optional-html/#toc-values)이라는 사실을 활용하는 경우 HTML의 미니멀한 아름다움에 대한 예를 볼 수 있습니다.
 
 ```html
-<input required readonly>
+<input required readonly />
 ```
 
 ## HTML을 HTML 방식대로 작성하세요.
