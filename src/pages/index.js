@@ -51,6 +51,13 @@ const origin =
 // data
 const links = [
   {
+    text: "(번역) 마이크로소프트는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
+    url: `${origin}/posts/how-microsoft-wants-to-destroy-typescript`,
+    description:
+      "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
+    color: "#999",
+  },
+  {
     text: "[번역] XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.",
     url: `${origin}/posts/write-html-the-html-way-not-the-xhtml-way`,
     description:
