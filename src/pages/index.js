@@ -56,6 +56,7 @@ const links = [
     description:
       "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
     color: "#999",
+    badge: true,
   },
   {
     text: "[번역] XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.",
@@ -63,7 +64,6 @@ const links = [
     description:
       "HTML을 XHTML 방식으로 작성하고 있진 않으신가요? HTML을 HTML 답게 작성하는 관점을 알아봅니다.",
     color: "#999",
-    badge: true,
   },
   {
     text: "[번역] Lerna는 공식적으로 죽었습니다. 모노레포여 영원하길",
