@@ -51,7 +51,7 @@ const origin =
 // data
 const links = [
   {
-    text: "(번역) 마이크로소프트는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
+    text: "(번역) Microsoft는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
     url: `${origin}/posts/how-microsoft-wants-to-destroy-typescript`,
     description:
       "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
