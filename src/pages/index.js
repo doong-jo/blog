@@ -51,7 +51,7 @@ const origin =
 // data
 const links = [
   {
-    text: "(번역) 테스트 가능한 프론트엔드: 좋은 것, 나쁜 것, 깨지기 쉬운 것",
+    text: "[번역] 테스트 가능한 프론트엔드: 좋은 것, 나쁜 것, 깨지기 쉬운 것",
     url: `${origin}/posts/testable-frontend-architecture`,
     description:
       "프론트엔드 테스팅의 좋은 것과 나쁜 것 그리고 깨지기 쉬운 것에 대해 알아봅니다.",
@@ -59,7 +59,7 @@ const links = [
     badge: true,
   },
   {
-    text: "(번역) Microsoft는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
+    text: "[번역] Microsoft는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
     url: `${origin}/posts/how-microsoft-wants-to-destroy-typescript`,
     description:
       "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
