@@ -54,7 +54,7 @@ const links = [
     text: "(번역) 테스트 가능한 프론트엔드: 좋은 것, 나쁜 것, 깨지기 쉬운 것",
     url: `${origin}/posts/testable-frontend-architecture`,
     description:
-      "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
+      "프론트엔드 테스팅의 좋은 것과 나쁜 것 그리고 깨지기 쉬운 것에 대해 알아봅니다.",
     color: "#999",
     badge: true,
   },
