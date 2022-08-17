@@ -51,12 +51,19 @@ const origin =
 // data
 const links = [
   {
+    text: "(번역) 테스트 가능한 프론트엔드: 좋은 것, 나쁜 것, 깨지기 쉬운 것",
+    url: `${origin}/posts/testable-frontend-architecture`,
+    description:
+      "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
+    color: "#999",
+    badge: true,
+  },
+  {
     text: "(번역) Microsoft는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
     url: `${origin}/posts/how-microsoft-wants-to-destroy-typescript`,
     description:
       "Microsoft가 제안한 Types as Comments에 대한 관점을 살펴봅니다.",
     color: "#999",
-    badge: true,
   },
   {
     text: "[번역] XHTML 방식이 아닌 HTML을 HTML의 방식으로 작성하세요.",
