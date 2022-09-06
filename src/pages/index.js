@@ -51,12 +51,18 @@ const origin =
 // data
 const links = [
   {
+    text: "[번역] CSS 안에 자바스크립트 넣기",
+    url: `${origin}/posts/putting-javascript-in-your-css`,
+    description: "CSS 안에 자바스크립트를 넣는 방법을 알아봅니다.",
+    color: "#999",
+    badge: true,
+  },
+  {
     text: "[번역] 테스트 가능한 프론트엔드: 좋은 것, 나쁜 것, 깨지기 쉬운 것",
     url: `${origin}/posts/testable-frontend-architecture`,
     description:
       "프론트엔드 테스팅의 좋은 것과 나쁜 것 그리고 깨지기 쉬운 것에 대해 알아봅니다.",
     color: "#999",
-    badge: true,
   },
   {
     text: "[번역] Microsoft는 JavaScript와 TypeScript를 어떻게 바꾸고 싶어하는가",
