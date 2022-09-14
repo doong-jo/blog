@@ -51,7 +51,7 @@ const origin =
 // data
 const links = [
   {
-    text: "[뱅크샐러드 블로그]뱅크샐러드 Web chapter에서 GitHub Action 기반의 CI 속도를 개선한 방법",
+    text: "뱅크샐러드 Web chapter에서 GitHub Action 기반의 CI 속도를 개선한 방법",
     url: "https://blog.banksalad.com/tech/github-action-npm-cache/",
     description:
       "nodejs 기반의 어플리케이션을 GitHub Action에서 CI를 구성할 때 속도를 개선하는 방법을 소개합니다.",
@@ -106,7 +106,7 @@ const links = [
     color: "#999",
   },
   {
-    text: "[How we build myrealtrip] Monorepo로 대규모 React 프로젝트 관리하기",
+    text: "Monorepo로 대규모 React 프로젝트 관리하기",
     url: "https://medium.com/myrealtrip-product/monorepo%EB%A1%9C-%EB%8C%80%EA%B7%9C%EB%AA%A8-react-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0-d12b65340306",
     description:
       "점차 규모가 커지는 프론트엔드 프로젝트, 어떻게 관리할 것인가?",
