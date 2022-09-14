@@ -51,11 +51,18 @@ const origin =
 // data
 const links = [
   {
+    text: "[뱅크샐러드 블로그]뱅크샐러드 Web chapter에서 GitHub Action 기반의 CI 속도를 개선한 방법",
+    url: "https://blog.banksalad.com/tech/github-action-npm-cache/",
+    description:
+      "nodejs 기반의 어플리케이션을 GitHub Action에서 CI를 구성할 때 속도를 개선하는 방법을 소개합니다.",
+    color: "#999",
+    badge: true,
+  },
+  {
     text: "[번역] CSS 안에 자바스크립트 넣기",
     url: `${origin}/posts/putting-javascript-in-your-css`,
     description: "CSS 안에 자바스크립트를 넣는 방법을 알아봅니다.",
     color: "#999",
-    badge: true,
   },
   {
     text: "[번역] 테스트 가능한 프론트엔드: 좋은 것, 나쁜 것, 깨지기 쉬운 것",
